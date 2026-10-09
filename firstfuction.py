@@ -24,3 +24,8 @@ def calculate_fine(days, book_type="standard", is_premium=False):
         fine = fine * 0.8
 
     return fine
+
+print("Standard, 3 days, Regular:", calculate_fine(3))  
+print("Standard, 7 days, Regular:", calculate_fine(7))        
+print("Reference, 4 days, Regular:", calculate_fine(4, "Reference"))
+print("Standard, 10 days, Premium:", calculate_fine(10, "Standard", True))
