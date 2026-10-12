@@ -1,31 +1,60 @@
-# def calculate_total(price, quantity):
-#     total = price * quantity
-#     print("Total Amount:", total)
+# # 
 
-# p1 = float(input("Price daalein: "))
-# q1 = int(input("Quantity daalein: "))
-# calculate_total(p1, q1)
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# calculate_total(50, 3)
-
-
-def calculate_fine(days, book_type="standard", is_premium=False):
+# for i in range(2, 6):
+#     print(numbers[i])
     
-    if book_type == "reference":
-        fine = days * 20
+    
+# # numbers = [1,2,3,4,5,6,7,8,9,10]
 
-    elif days <= 5:
-        fine = days * 5
+# # start = int(input("Enter start: "))
+# # end = int(input("Enter end: "))
 
-    else:
-        fine = 25 + (days - 5) * 10
+# # for i in range(start, end + 1):
+# #     print(numbers[i])
 
-    if is_premium:
-        fine = fine * 0.8
 
-    return fine
+tasks = []
 
-print("Standard, 3 days, Regular:", calculate_fine(3))  
-print("Standard, 7 days, Regular:", calculate_fine(7))        
-print("Reference, 4 days, Regular:", calculate_fine(4, "Reference"))
-print("Standard, 10 days, Premium:", calculate_fine(10, "Standard", True))
+running = 1
+
+while running == 1:
+    print("1. Add task")
+    print("2. Delete task")
+    print("3. Remove last task")
+    print("4. Sort list")
+    print("5. Show list")
+    print("6. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        task = input("Enter task: ")
+
+        while task != "-1":
+            tasks.append(task)
+            task = input("Enter task: ")
+
+    elif choice == 2:
+        index = int(input("Enter index: "))
+        if index >= 0 and index < len(tasks):
+            tasks.pop(index)
+        print(tasks)
+
+    elif choice == 3:
+        if len(tasks) > 0:
+            tasks.pop()
+        print(tasks)
+
+    elif choice == 4:
+        tasks.sort()
+        print(tasks)
+
+    elif choice == 5:
+        print(tasks)
+
+    elif choice == 6:
+        running = 0
+
+print("Exit")
