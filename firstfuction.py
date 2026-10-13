@@ -96,12 +96,19 @@
 
 
 
+# words = ["apple", "banana", "elephant", "cat"]
+
+# longest = ""
+
+# for word in words:
+#     if len(word) > len(longest):
+#         longest = word
+
+# print(longest)
+
+
 words = ["apple", "banana", "elephant", "cat"]
 
-longest = ""
-
-for word in words:
-    if len(word) > len(longest):
-        longest = word
+longest = max(words, key=lambda word: len(word))
 
 print(longest)
